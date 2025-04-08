@@ -58,10 +58,10 @@ export default {
                     password: this.password
                 });
                 if (response.data.code==200) {
-                    console.log(response.data.token);
-                    localStorage.setItem("token", response.data.token); // ✅ 存储 JWT Token
-                    localStorage.setItem("ID",response.data.userID);
-                    localStorage.setItem("username",response.data.username);
+                    console.log(response.data.data.token);
+                    localStorage.setItem("token", response.data.data.token); // ✅ 存储 JWT Token
+                    localStorage.setItem("ID",response.data.data.id);
+                    localStorage.setItem("username",response.data.data.name);
                     this.$router.push("/content"); // ✅ 跳转到语音生成页面
                 } else {
                     console.log(response.data.code)
